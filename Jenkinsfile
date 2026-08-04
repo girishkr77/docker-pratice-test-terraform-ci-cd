@@ -9,7 +9,8 @@ sh 'ls -la'
 }
 stage('python integration'){
 steps{
-sh 'python3 --version'
+sh 'docker --version'
+sh 'terraform --version'
 }
 }
 }
