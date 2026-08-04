@@ -5,6 +5,7 @@ stages{
 stage('git push'){
 steps{
 sh 'ls -la'
+echo 'jai balaya in jenkins'
 }
 }
 stage('python integration'){
