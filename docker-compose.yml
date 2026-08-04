@@ -1,6 +1,0 @@
-services:
-  django-web-app1:
-    build: ./my-first-container
-    container_name: django-web-app1
-    volumes:
-      - ./my-first-container:/app
