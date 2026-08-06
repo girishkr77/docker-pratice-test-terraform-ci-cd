@@ -7,7 +7,7 @@ AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
 stages{
 stage('git push'){
 steps{
-sh 'mkdir -p build_room && cd build_room && echo "FORM alpine:latest" > Dockerfile'
+sh 'mkdir -p build_room && cd build_room && echo "FROM alpine:latest" > Dockerfile'
 sh 'docker build -t my-first-container:v1 build_room'
 }
 }
