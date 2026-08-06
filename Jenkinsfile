@@ -14,8 +14,8 @@ sh 'docker build -t my-first-container:v1 build_room'
 stage('python integration'){
 steps{
 sh 'aws ecr get-login-password --region ap-south-1|docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com'
-sh 'docker tag my-first-container:v1 arn:aws:ecr:ap-south-1:${AWS_ACCOUNT_ID}:repository/django:v1'
-sh 'docker push arn:aws:ecr:ap-south-1:${AWS_ACCOUNT_ID}:repository/django:v1'
+sh 'docker tag my-first-container:v1 {AWS_ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com/django:v1'
+sh 'docker push {AWS_ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com/django:v1'
 }
 }
 }
