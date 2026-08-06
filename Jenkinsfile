@@ -14,7 +14,7 @@ sh 'terraform apply --auto-approve'
 }
 stage('human intervention'){
 steps{
-input_message : 'vpc grid is avaliable need to destroy',ok:'approve destroy'
+input_message: 'vpc grid is avaliable need to destroy',ok:'approve destroy'
 }
 }
 stage('terraform destroy'){
