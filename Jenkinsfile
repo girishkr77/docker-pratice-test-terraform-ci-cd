@@ -8,7 +8,7 @@ stages{
 stage('docker') {
 steps {
 sh 'docker build -t my-first-container:v2 build_room'
-sh 'aws ecr get-login-password --region ap-south-1|docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}..dkr.ecr.ap-south-1.amazonaws.com'
+sh 'aws ecr get-login-password --region ap-south-1|docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com'
 sh 'docker tag my-first-container:v2 185188589995.dkr.ecr.ap-south-1.amazonaws.com/django:v2'
 sh 'docker push 185188589995.dkr.ecr.ap-south-1.amazonaws.com/django:v2'
 }
