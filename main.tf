@@ -1,0 +1,19 @@
+terraform{
+required_providers{
+aws={
+source='hashicorp/aws'
+}
+}
+}
+
+provider "aws" {
+region = "ap-south-1"
+}
+
+resource "aws_vpc" "jenkins_vpc" {
+cidr_block = "10.0.0.0/16"
+enable_dns_support = true
+enable_dns_hostnames = true
+
+tags = {Name = "production-vpc"}
+}
